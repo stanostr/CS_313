@@ -12,6 +12,13 @@ public class Car {
         GAS, DIESEL, ELECTRIC, HYBRID
     }
 
+    //instance variables
+    private FuelType fuelType;
+    private int curbWeight;
+    private int horsepower;
+    private int fuelRemaining; //percent
+    private int RPM; //rotations per minute
+
     //default constructor with default values
     public Car()
     {
@@ -31,14 +38,6 @@ public class Car {
         this.fuelRemaining = fuelRemaining;
         RPM = 0;
     }
-
-    //instance variables
-    private FuelType fuelType;
-    private int curbWeight;
-    private int horsepower;
-    private int length;
-    private int fuelRemaining; //percent
-    private int RPM; //rotations per minute
 
     public FuelType getFuelType() {
         return fuelType;
@@ -62,14 +61,6 @@ public class Car {
 
     public void setHorsepower(int horsepower) {
         this.horsepower = horsepower;
-    }
-
-    public int getLength() {
-        return length;
-    }
-
-    public void setLength(int length) {
-        this.length = length;
     }
 
     public int getFuelRemaining() {

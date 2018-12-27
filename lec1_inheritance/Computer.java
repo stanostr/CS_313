@@ -8,12 +8,12 @@ public class Computer {
     private int ONE_BILLION = 1000000000; // for Gigabytes or Gigahertz
 
     //instance variables, "protected" modifier allows subclasses to access these fields and noone else
-    protected int availableRam; //in bytes
-    protected int processorSpeed; //in hertz
-    protected int availableHDDSpace; //in bytes
+    protected long availableRam; //in bytes
+    protected long processorSpeed; //in hertz
+    protected long availableHDDSpace; //in bytes
 
     //constructors are called to create new objects of this class
-    public Computer(int ram, int speed, int hDDspace)
+    public Computer(long ram, int speed, int hDDspace)
     {
         availableRam = ram;
         processorSpeed = speed;
@@ -30,28 +30,28 @@ public class Computer {
     }
 
     //instance variables are accessed via public getters
-    public int getAvailableRam() {
+    public long getAvailableRam() {
         return availableRam;
     }
 
     //instance variables are assigned using public setters
-    public void setAvailableRam(int availableRam) {
+    public void setAvailableRam(long availableRam) {
         this.availableRam = availableRam;
     }
 
-    public int getProcessorSpeed() {
+    public long getProcessorSpeed() {
         return processorSpeed;
     }
 
-    public void setProcessorSpeed(int processorSpeed) {
+    public void setProcessorSpeed(long processorSpeed) {
         this.processorSpeed = processorSpeed;
     }
 
-    public int getAvailableHDDSpace() {
+    public long getAvailableHDDSpace() {
         return availableHDDSpace;
     }
 
-    public void setAvailableHDDSpace(int availableHDDSpace) {
+    public void setAvailableHDDSpace(long availableHDDSpace) {
         this.availableHDDSpace = availableHDDSpace;
     }
 }

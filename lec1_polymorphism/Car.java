@@ -26,7 +26,6 @@ public class Car implements Operable {
         curbWeight = 3000;
         fuelRemaining = 100; //default is full tank
         RPM = 0; //default is car off
-
     }
 
     public Car(FuelType fuelType, int curbWeight, int horsepower, int fuelRemaining)
