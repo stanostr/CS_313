@@ -18,9 +18,9 @@ public class Laptop extends Computer {
     }
 
     //new constructor with parameters
-    public Laptop(int ram, int numCores, int speed, int hDDspace, int batteryLeft)
+    public Laptop(int ram, int speed, int hDDspace, int batteryLeft)
     {
-        super(ram, numCores, speed, hDDspace);
+        super(ram, speed, hDDspace);
         this.batteryLeft = batteryLeft;
     }
 

@@ -1,5 +1,7 @@
 package lec1_inheritance;
 
+import static lec1_inheritance.Car.FuelType.*;
+
 /**
  * A simple class to represent a car
  */
@@ -8,6 +10,26 @@ public class Car {
     //enumtype to represent types of fuel
     public enum FuelType {
         GAS, DIESEL, ELECTRIC, HYBRID
+    }
+
+    //default constructor with default values
+    public Car()
+    {
+        fuelType = GAS;
+        horsepower = 100;
+        curbWeight = 3000;
+        fuelRemaining = 100; //default is full tank
+        RPM = 0; //default is car off
+
+    }
+
+    public Car(FuelType fuelType, int curbWeight, int horsepower, int fuelRemaining)
+    {
+        this.fuelType = fuelType;
+        this.curbWeight = curbWeight;
+        this.horsepower = horsepower;
+        this.fuelRemaining = fuelRemaining;
+        RPM = 0;
     }
 
     //instance variables

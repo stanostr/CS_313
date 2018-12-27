@@ -16,13 +16,15 @@ public class Laptop extends Computer implements Operable{
     {
         super(); //call to superclass default constructor, super calls must be first line in constructor
         batteryLeft = 100;
+        isCharging = true;
     }
 
     //new constructor with parameters
-    public Laptop(int ram, int numCores, int speed, int hDDspace, int batteryLeft)
+    public Laptop(int ram, int speed, int hDDspace, int batteryLeft)
     {
-        super(ram, numCores, speed, hDDspace);
+        super(ram, speed, hDDspace);
         this.batteryLeft = batteryLeft;
+        isCharging = true;
     }
 
 
@@ -43,7 +45,7 @@ public class Laptop extends Computer implements Operable{
             //if battery falls to zero, laptop turns off
             if(batteryLeft<=0) {
                 batteryLeft = 0;
-                System.out.println("Laptop ran out of memory and turned off");
+                System.out.println("Laptop ran out of battery and turned off");
             }
         }
         else //laptop is charging
@@ -61,5 +63,13 @@ public class Laptop extends Computer implements Operable{
 
     public void setBatteryLeft(int batteryLeft) {
         this.batteryLeft = batteryLeft;
+    }
+
+    public boolean isCharging() {
+        return isCharging;
+    }
+
+    public void setCharging(boolean charging) {
+        isCharging = charging;
     }
 }
