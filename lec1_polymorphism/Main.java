@@ -18,9 +18,12 @@ public class Main {
         myCar.turnOn();
         System.out.println("myCar is now running at " + myCar.getRPM() + " RPM"); //Has increased
 
-        myCar.run(4*60); //run for 8 hours eeek!
+        myCar.run(4*60); //run for 4 hours eeek!
 
         myLaptop.setCharging(false); //unplug battery
         myLaptop.run(4*60); //run for two hours
+
+        myCar.run(60); //run for another 60 minutes ... bad idea
+
     }
 }

@@ -49,7 +49,7 @@ public class Car implements Operable {
         fuelRemaining = (int) (fuelRemaining - 0.2 * minutes); //note the cast
 
         //if fuel runs low display low fuel message
-        if(fuelRemaining < 5)
+        if(fuelRemaining < 5 && fuelRemaining > 0)
             displayLowFuel();
         if(fuelRemaining <= 0)
         {
