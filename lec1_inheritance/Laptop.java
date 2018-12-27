@@ -1,4 +1,4 @@
-package inheritance;
+package lec1_inheritance;
 
 /**
  * a class that extends Computer,

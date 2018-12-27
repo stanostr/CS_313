@@ -1,6 +1,6 @@
-package polymorphism;
+package lec1_polymorphism;
 
-import static polymorphism.Car.FuelType.*;
+import static lec1_polymorphism.Car.FuelType.*;
 
 /**
  * Simple class to represent a car

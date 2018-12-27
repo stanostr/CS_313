@@ -1,4 +1,4 @@
-package polymorphism;
+package lec1_polymorphism;
 
 /**
  * interface with two methods

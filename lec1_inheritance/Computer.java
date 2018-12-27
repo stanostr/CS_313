@@ -1,7 +1,7 @@
-package inheritance;
+package lec1_inheritance;
 
 /**
- * Simple example to demonstrate Java inheritance and polymorphism.
+ * Simple example to demonstrate Java lec1_inheritance and lec1_polymorphism.
  */
 public class Computer {
     //final constants, conventionally in caps

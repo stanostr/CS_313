@@ -1,4 +1,4 @@
-package inheritance;
+package lec1_inheritance;
 
 /**
  * A simple class to represent a car
