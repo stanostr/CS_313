@@ -1,5 +1,8 @@
 package inheritance;
 
+/**
+ * A simple class to represent a car
+ */
 public class Car {
 
     //enumtype to represent types of fuel
