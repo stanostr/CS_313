@@ -16,6 +16,8 @@ public class ExceptionDemoTwo {
         finally {
             System.out.println("Always say goodbye!");
         }
+
+        System.out.println("Program still running :)");
     }
 
     private static void printNumber(String string) throws NumberFormatException
