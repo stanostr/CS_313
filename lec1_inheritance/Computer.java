@@ -5,7 +5,7 @@ package lec1_inheritance;
  */
 public class Computer {
     //final constants, conventionally in caps
-    private int ONE_BILLION = 1000000000; // for Gigabytes or Gigahertz
+    private static final int ONE_BILLION = 1000000000; // for Gigabytes or Gigahertz
 
     //instance variables, "protected" modifier allows subclasses to access these fields and noone else
     protected long availableRam; //in bytes
