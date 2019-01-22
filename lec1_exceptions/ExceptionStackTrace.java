@@ -15,13 +15,6 @@ public class ExceptionStackTrace {
     private static void methodTwo(int num)
     {
         methodThree(num);
-
-        /**
-        try {
-            methodThree(num);
-        } catch (ArithmeticException a) {
-            System.out.println("An ArithmeticException occurred but we caught it!");
-        } */
     }
 
     private static void methodThree(int num)
