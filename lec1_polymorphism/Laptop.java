@@ -32,7 +32,7 @@ public class Laptop extends Computer implements Operable{
     @Override
     public void turnOn() {
         //turning on consumes 2 Gigabytes of RAM
-        availableRam = availableRam - 2 * ONE_BILLION;
+        availableRam = availableRam - 2000;
     }
 
     @Override
