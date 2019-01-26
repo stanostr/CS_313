@@ -4,13 +4,11 @@ package lec1_inheritance;
  * Simple example to demonstrate Java lec1_inheritance and lec1_polymorphism.
  */
 public class Computer {
-    //final constants, conventionally in caps
-    private static final int ONE_BILLION = 1000000000; // for Gigabytes or Gigahertz
 
     //instance variables, "protected" modifier allows subclasses to access these fields and noone else
-    protected long availableRam; //in bytes
-    protected long processorSpeed; //in hertz
-    protected long availableHDDSpace; //in bytes
+    protected long availableRam; //in megabytes
+    protected long processorSpeed; //in megahertz
+    protected long availableHDDSpace; //in megabytes
 
     //constructors are called to create new objects of this class
     public Computer(long ram, int speed, int hDDspace)
@@ -24,9 +22,9 @@ public class Computer {
     public Computer()
     {
         //generic low-end laptop in 2017
-        availableRam = 4 * ONE_BILLION;
-        processorSpeed = 2 * ONE_BILLION; //2 GHz
-        availableHDDSpace = 500 * ONE_BILLION;
+        availableRam = 4000;
+        processorSpeed = 2000; //2 GHz
+        availableHDDSpace = 500000;
     }
 
     //instance variables are accessed via public getters
