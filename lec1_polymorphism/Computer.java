@@ -4,11 +4,10 @@ package lec1_polymorphism;
  * Simple example to demonstrate Java lec1_inheritance and lec1_polymorphism.
  */
 public class Computer {
-    public final static long ONE_BILLION = 1000000000;
 
-    protected long availableRam; //in bytes
-    protected long processorSpeed; //in hertz
-    protected long availableHDDSpace; //in bytes
+    protected long availableRam; //in megabytes
+    protected long processorSpeed; //in megahertz
+    protected long availableHDDSpace; //in megabytes
 
     public Computer(long ram, long speed, long hDDspace)
     {
@@ -20,9 +19,9 @@ public class Computer {
     public Computer()
     {
         //generic low-end laptop in 2017
-        availableRam = 4 * ONE_BILLION;
-        processorSpeed = 2 * ONE_BILLION; //2 GHz
-        availableHDDSpace = 500 * ONE_BILLION;
+        availableRam = 4000; //4GB
+        processorSpeed = 2000; //2 GHz
+        availableHDDSpace = 5000000; //500 GB
     }
 
     public long getAvailableRam() {
