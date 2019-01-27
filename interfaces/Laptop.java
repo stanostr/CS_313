@@ -1,4 +1,4 @@
-package lec1_polymorphism;
+package interfaces;
 
 /**
  * a class that extends Computer,

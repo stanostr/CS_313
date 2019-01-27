@@ -1,4 +1,4 @@
-package lec1_exceptions;
+package exceptions;
 
 import java.io.*;
 import java.util.ArrayList;

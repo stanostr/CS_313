@@ -1,4 +1,4 @@
-package lec1_generics;
+package generics;
 
 public class GenericPair <A, B> {
     A first;

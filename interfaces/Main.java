@@ -1,4 +1,4 @@
-package lec1_polymorphism;
+package interfaces;
 
 import static lec1_polymorphism.Car.FuelType.*;
 

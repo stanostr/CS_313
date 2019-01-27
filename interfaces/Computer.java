@@ -1,4 +1,4 @@
-package lec1_polymorphism;
+package interfaces;
 
 /**
  * Simple example to demonstrate Java lec1_inheritance and lec1_polymorphism.
