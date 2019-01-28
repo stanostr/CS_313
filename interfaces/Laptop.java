@@ -51,7 +51,7 @@ public class Laptop extends Computer implements Operable{
         else //laptop is charging
         {
             //charges 2% per minute
-            batteryLeft = batteryLeft + minutes;
+            batteryLeft = batteryLeft + 2*minutes;
             if(batteryLeft>100)
                 batteryLeft = 100;
         }
