@@ -1,6 +1,7 @@
 package linkedlist;
 
 public class SinglyLinkedListTest {
+    //using our SinglyLinkedList class
     public static void main(String[] args)
     {
         SinglyLinkedList<Integer> linkedList = new SinglyLinkedList<>();
@@ -14,5 +15,8 @@ public class SinglyLinkedListTest {
         System.out.println(linkedList.removeFirst());
         System.out.println(linkedList.first());
         System.out.println(linkedList.removeFirst());
+        
+        //if we had to implement round-robin scheduling using a singly linked list,
+        //how would we do it?
     }
 }
