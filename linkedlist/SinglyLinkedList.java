@@ -1,3 +1,5 @@
+package linkedlist;
+
 public class SinglyLinkedList<E> {
 	
 	//a nested class to represent a node
