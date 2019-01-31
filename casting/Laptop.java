@@ -1,5 +1,3 @@
-package lec1_polymorphism;
-
 /**
  * a class that extends Computer,
  * i.e. Computer is a "superclass" of this class
