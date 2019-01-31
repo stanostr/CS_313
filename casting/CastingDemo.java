@@ -1,5 +1,3 @@
-package lec1_polymorphism;
-
 public class CastingDemo {
     public static void main(String[] args)
     {
