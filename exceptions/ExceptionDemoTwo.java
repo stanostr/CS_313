@@ -5,6 +5,7 @@ public class ExceptionDemoTwo {
     {
         try {
            printNumber(args[0]);
+           int i = 10/(Integer.valueOf(args[0]));
         }
         catch (ArrayIndexOutOfBoundsException OutOfBoundsException) {
             System.out.println("ArrayIndexOutOfBoundsException occurred");
