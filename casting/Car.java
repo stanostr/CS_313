@@ -1,5 +1,3 @@
-package lec1_polymorphism;
-
 import static lec1_polymorphism.Car.FuelType.*;
 
 /**
