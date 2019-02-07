@@ -12,7 +12,7 @@ public class CircularLinkedList<E> {
             this.element = element;
             this.next = next;
         }
-        public E getElement() { return element; } //setter for the data
+        public E getElement() { return element; } //get the data in the node
         public Node<E> getNext() { return next; } //get next Node
         public void setNext(Node<E> next) { this.next = next; } //change next Node
     }
