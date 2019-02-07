@@ -14,7 +14,7 @@ public class DoublyLinkedList<E> {
             this.prev = prev;
             this.next = next;
         }
-        public E getElement() { return element; } //setter for the data
+        public E getElement() { return element; } //getter for the data
         public Node<E> getPrev() { return prev; } //get previous Node
         public Node<E> getNext() { return next; } //get next Node
         public void setPrev(Node<E> prev) { this.prev = prev; }
