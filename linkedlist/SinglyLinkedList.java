@@ -37,7 +37,6 @@ public class SinglyLinkedList<E> {
 		return head.getElement();
 	}
 	
-	
 	public E last() {
 		if(isEmpty()) return null;
 		return tail.getElement();
