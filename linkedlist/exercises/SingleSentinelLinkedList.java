@@ -51,9 +51,7 @@ public class SingleSentinelLinkedList<E> {
     }
 
     /**
-     * Note that this a private helper method.
-     * Users of the class do not have access to this method,
-     * as there is no such operation on a doubly (or singly) linked list
+     * No changes
      */
     private void addBetween(E e, Node<E> predecessor, Node<E> successor)
     {
@@ -74,8 +72,7 @@ public class SingleSentinelLinkedList<E> {
     }
 
     /**
-     * Note how this is also a private helper method,
-     * there is no general-case remove operation for a doubly linked list
+     * No changes
      */
     private E remove(Node <E> node)
     {
@@ -90,7 +87,6 @@ public class SingleSentinelLinkedList<E> {
     public E removeFirst()
     {
         if(isEmpty()) return null;
-        //note how we are calling the private remove method, which return an object of type E
         return remove(sentinel.getNext());
     }
 
