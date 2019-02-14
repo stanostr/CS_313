@@ -11,7 +11,8 @@ public class CloneTest {
         SinglyLinkedList<Integer> linkedList2 = linkedList.clone();
         if(linkedList2!=null) {
             linkedList2.removeFirst();
-            System.out.println(linkedList2.first());
+            System.out.println(linkedList2.first()); //line 1
+            System.out.println(linkedList.first()); //line 2
         }
         else System.out.println("linkedList2 is null");
     }
