@@ -1,7 +1,5 @@
 package linkedlist.cloning;
 
-import java.util.LinkedList;
-
 public class CloneTest {
     public static void main(String[] args)
     {
