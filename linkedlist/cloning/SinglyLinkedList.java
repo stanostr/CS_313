@@ -80,8 +80,6 @@ public class SinglyLinkedList<E> implements Cloneable {
 	return result;
     }
 
-
-
     //this is how it must be done to override the equals method of Object
     @Override
     public boolean equals(Object o)
