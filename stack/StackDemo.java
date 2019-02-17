@@ -3,7 +3,7 @@ package stack;
 public class StackDemo {
     public static void main(String[] args)
     {
-        ArrayStack<Integer> arrayStack = new ArrayStack<>(5);
+        Stack<Integer> arrayStack = new ArrayStack<>(5);
         try {
             arrayStack.push(1);
             arrayStack.push(7);
