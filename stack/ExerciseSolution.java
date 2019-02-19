@@ -1,8 +1,5 @@
 package stack;
 
-import stack.LinkedStack;
-import stack.Stack;
-
 public class ExerciseSolution {
 
     //R-6.4
