@@ -1,4 +1,4 @@
-package stack.exercises;
+package stack;
 
 import stack.LinkedStack;
 import stack.Stack;
