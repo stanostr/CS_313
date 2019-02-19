@@ -13,6 +13,7 @@ public class ExerciseSolution {
     public static void main(String[] args)
     {
         Stack<Integer> S = new LinkedStack<>();
+        //adding some dummy data
         S.push(5);
         S.push(4);
         S.push(3);
