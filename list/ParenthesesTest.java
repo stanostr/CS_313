@@ -7,7 +7,7 @@ public class ParenthesesTest {
         Both implementations are correct.
         The ArrayList approach is
         more complicated to write, less readable,
-        and, worst of all, it is MUCH slower.
+        and, most importantly, it is asymptotically worse!
         */
         String validString = "{}{[]}({(())})";
         System.out.println(ValidParentheses.isValid(validString)); //line 1
