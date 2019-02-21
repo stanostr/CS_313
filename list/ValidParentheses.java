@@ -24,7 +24,7 @@ public class ValidParentheses {
             }
             else if(curr == ')')
             {
-                //notice how if stack is empty (ie unclosed brace, then top() will return null
+                //notice how if stack is empty (i.e. unclosed brace), then top() will return null
                 //and this works in our implementation of stack
                 if(stack.top()!='(') return false; //O(1)
                 else stack.pop(); //O(1)
@@ -59,7 +59,7 @@ public class ValidParentheses {
             }
             else if (curr == ')') {
                 if(list.isEmpty()) return false; //we now have to add this to avoid exception
-                if (list.get(0) != '(') return false;
+                if (list.get(0) != '(') return false; //O(1) still because we always look for element 0
                 else list.remove(0); //O(n)
             }
             else if (s.charAt(i) == '}') {
