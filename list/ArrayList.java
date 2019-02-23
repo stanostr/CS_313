@@ -108,4 +108,20 @@ public class ArrayList<E> implements List<E> {
         //old array will be picked up by garbage collection
     }
 
+    /**
+    * Exercise
+    */
+    @Override
+    public ArrayList<E> clone()
+    {
+        try {
+            ArrayList<E> other = (ArrayList) super.clone();
+            other.data =  data.clone(); //all we have to do
+            return other;
+        } catch (CloneNotSupportedException e) {
+            //cannot happen
+            e.printStackTrace();
+            return null;
+        }
+    }
 }
