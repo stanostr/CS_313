@@ -5,7 +5,7 @@ public class ArrayListTest {
     {
         List<Integer> arrayList = new FixedArrayList<>();
         //what would happen if the next line was not commented out
-        System.out.println(arrayList.get(1));
+        //System.out.println(arrayList.get(1));
         arrayList.add(2);
         arrayList.add(1);
         arrayList.add(1, 3);
