@@ -75,4 +75,36 @@ public class ValidParentheses {
         if (!list.isEmpty()) return false;
         return true;
     }
+    
+    /**
+     * Same as above but we improve asymptotic runtime but noticeably less readable and more complex.
+     */
+    public static boolean isValidUsingArrayListImproved(String s) {
+        if (s.length() == 0) return true;
+        if (s.length() % 2 == 1) return false;
+
+        List<Character> list = new ArrayList<>(s.length()); //to avoid having to resize array
+        for (int i = 0; i < s.length(); i++) {
+            char curr = s.charAt(i);
+            if (curr == '(' || curr == '{' || curr == '[') {
+                list.add(list.size(), curr); //O(n)
+            }
+            else if (curr == ')') {
+                if(list.isEmpty()) return false; //we now have to add this to avoid exception
+                if (list.get(list.size()-1) != '(') return false; //O(1) because we are looking for the first element
+                else list.remove(list.size()-1); //O(1)
+            }
+            else if (s.charAt(i) == '}') {
+                if(list.isEmpty()) return false;
+                if (list.get(list.size()-1) != '{') return false;
+                else list.remove(list.size()-1); //O(n)
+            } else if (s.charAt(i) == ']') {
+                if(list.isEmpty()) return false;
+                if (list.get(list.size()-1) != '[') return false;
+                else list.remove(list.size()-1); //O(n)
+            }
+        }
+        if (!list.isEmpty()) return false;
+        return true;
+    }
 }
