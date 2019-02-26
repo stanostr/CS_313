@@ -15,5 +15,9 @@ public class ArrayListTest {
         System.out.println(arrayList.set(0, 7)); //line 1
         System.out.println(arrayList.remove(1)); //line 2
         System.out.println(arrayList.get(1)); //line 3
+        
+        //what would happen if we did not comment out these lines?
+        //for(int i=0; i<6; i++) 
+        //    arrayList.add(1);
     }
 }
