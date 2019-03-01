@@ -5,7 +5,7 @@ import java.util.Random;
 import static java.lang.Thread.sleep;
 
 /**
- * To illustrate the possibly problems of using a "lazy iterator" in a multithreaded environment.
+ * To illustrate the possible problems of using a "lazy iterator" in a multithreaded environment.
  * Running the main method will cause an exception about half of the time.
  * @author Stanislav Ostrovskii
  */
