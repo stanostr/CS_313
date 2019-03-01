@@ -5,8 +5,8 @@ import java.util.Random;
 import static java.lang.Thread.sleep;
 
 /**
- * To illustrate the disadvantages of using a "lazy iterator" in a multithreaded environment.
- * Running the main method will cause an exception around half the time.
+ * To illustrate the possibly problems of using a "lazy iterator" in a multithreaded environment.
+ * Running the main method will cause an exception about half of the time.
  * @author Stanislav Ostrovskii
  */
 public class LazyIteratorFail {
@@ -31,8 +31,8 @@ public class LazyIteratorFail {
 
         /**
          *  Runs two threads, each of which creates their own Iterator instance.
-         *  One is supposed to print all the elements using an Iterator.
-         *  The other just removes all elements from the Iterator using remove()
+         *  One is supposed to print all the elements in the ArrayList using an Iterator.
+         *  The other just removes all elements using remove()
          */
         new Thread(new printerRunnable(arrayList)).start();
         new Thread(new removerRunnable(arrayList)).start();
@@ -67,7 +67,6 @@ public class LazyIteratorFail {
         }
     }
 
-
     /**
      * A Runnable that prints all the Strings in an array list using an iterator
      */
@@ -86,7 +85,6 @@ public class LazyIteratorFail {
                 if(iter.hasNext())
                 {
                     iter.next();
-                    //sleeps a random number of milliseconds, just to help us break it :)
                     try {
                         sleep( new Random().nextInt(10)+1);
                     } catch (InterruptedException e) {
