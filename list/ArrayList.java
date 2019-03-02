@@ -3,7 +3,7 @@ package list;
 /**
  * Dynamic array implementation of the ArrayList
  */
-public class ArrayList<E> implements List<E> {
+public class ArrayList<E> implements List<E>, CLoneable {
 
     public static final int CAPACITY = 10;
     private E[] data; //generic array that we will use for storage
