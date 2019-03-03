@@ -54,7 +54,7 @@ public class ArrayList<E> implements List<E>, Cloneable{
     }
 
     @Override
-    public void add(E e)
+    public void add(E e) throws IndexOutOfBoundsException
     {
         //instead of throwing exception, we resize the array
         //doubling previous size
