@@ -112,7 +112,7 @@ public class ArrayList<E> implements List<E>, Cloneable{
     }
 
     /**
-     * Exercise
+     * Creates a shallow copy of the ArrayList instance
      */
     @Override
     public ArrayList<E> clone()

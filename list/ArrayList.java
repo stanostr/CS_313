@@ -109,14 +109,14 @@ public class ArrayList<E> implements List<E>, Cloneable {
     }
 
     /**
-    * Exercise
+    * Creates a shallow copy of the ArrayList instance.
     */
     @Override
     public ArrayList<E> clone()
     {
         try {
             ArrayList<E> other = (ArrayList) super.clone();
-            other.data =  data.clone(); //all we have to do
+            other.data =  data.clone(); //creates a SHALLOW copy
             return other;
         } catch (CloneNotSupportedException e) {
             //cannot happen
