@@ -1,6 +1,5 @@
 package interfaces;
 
-import static lec1_polymorphism.Car.FuelType.*;
 
 /**
  * Simple class to represent a car
@@ -21,7 +20,7 @@ public class Car implements Operable {
     //default constructor with default values
     public Car()
     {
-        fuelType = GAS;
+        fuelType = FuelType.GAS;
         horsepower = 100;
         curbWeight = 3000;
         fuelRemaining = 100; //default is full tank

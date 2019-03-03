@@ -1,10 +1,12 @@
+import interfaces.Operable;
+
 /**
  * a class that extends Computer,
  * i.e. Computer is a "superclass" of this class
  * and Laptop is a "subclass" of Computer
  * * Now this class implements the Operable interface.
  */
-public class Laptop extends Computer implements Operable{
+public class Laptop extends Computer implements Operable {
     //addtional instance variables
     private int batteryLeft; //in percent
     private boolean isCharging;

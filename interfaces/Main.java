@@ -1,6 +1,6 @@
 package interfaces;
 
-import static lec1_polymorphism.Car.FuelType.*;
+import static interfaces.Car.FuelType.GAS;
 
 public class Main {
     public static void main(String[] args)
