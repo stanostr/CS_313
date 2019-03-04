@@ -10,7 +10,7 @@ public class Author implements Cloneable {
         this.name = name;
     }
 
-    //what kind of copying is this? (trick question)
+    //what kind of copy is this? (trick question)
     @Override
     protected Author clone() {
         return this;

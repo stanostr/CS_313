@@ -10,7 +10,7 @@ public class Library implements Cloneable {
         this.books = books;
     }
 
-    //what kind of copying is this? Note: we already know that Book's clone() returns a shallow copying
+    //what kind of copy is this? Note: we already know that Book's clone() returns a shallow copy
     @Override
     protected Library clone() {
         try {

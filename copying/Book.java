@@ -12,7 +12,7 @@ public class Book implements Cloneable {
         this.author = author;
     }
 
-    //what sort of copying is this?
+    //what sort of copy is this?
     @Override
     public Book clone()  {
         try {

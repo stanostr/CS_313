@@ -5,13 +5,13 @@ public class Test {
     {
         Author author = new Author("Jules Verne");
 
-        Author author2 = author.clone(); //not a copying
+        Author author2 = author.clone(); //not a copy
         author2.setName("Alexandre Dumas");
 
         System.out.println("Line 1: " + author.getName()); //line 1
 
         Book book = new Book("123ISBN", "The Three Musketeers", author);
-        Book book2 = book.clone(); //shallow copying
+        Book book2 = book.clone(); //shallow copy
 
         book2.setTitle("Meditations");
         book2.getAuthor().setName("Marcus Aurelius");
@@ -26,7 +26,7 @@ public class Test {
         books[2] = new Book("987ISBN", "Book 3", new Author("Jill"));
 
         Library library = new Library("Library of Alexandria", books);
-        Library library2 = library.clone(); //deep copying
+        Library library2 = library.clone(); //deep copy
         library2.setName("The Great Library");
         library2.getBooks()[0].setTitle("Book 10");
 
