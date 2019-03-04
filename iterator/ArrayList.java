@@ -72,7 +72,7 @@ public class ArrayList<E> implements List<E>, Cloneable{
         //instead of throwing exception, we resize the array now
         if(size==data.length)
             resize(data.length * 2);
-        for(int k=size-1; k >= i; k--) //manual array copy for demonstration
+        for(int k=size-1; k >= i; k--) //manual array copying for demonstration
             data[k+1] = data[k];
         data[i] = e;
         size++;
@@ -112,7 +112,7 @@ public class ArrayList<E> implements List<E>, Cloneable{
     }
 
     /**
-     * Creates a shallow copy of the ArrayList instance
+     * Creates a shallow copying of the ArrayList instance
      */
     @Override
     public ArrayList<E> clone()

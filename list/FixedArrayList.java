@@ -61,7 +61,7 @@ public class FixedArrayList<E> implements List<E> {
         checkIndex(i, size);
         if(size==data.length)
             throw new IllegalStateException("Array is full");
-        for(int k=size-1; k >= i; k--) //manual array copy for demonstration
+        for(int k=size-1; k >= i; k--) //manual array copying for demonstration
             data[k+1] = data[k];
         data[i] = e;
         size++;
