@@ -74,7 +74,7 @@ public class ArrayList<E> implements List<E>, Cloneable {
             E[] temp = (E[]) new Object[data.length*2];
             for(int j=0; j<i; j++) //inserts data before index
                 temp[j] = data[j];
-            for(int k=i; k<size; k++) //inserts data after index, shifting it it up one
+            for(int k=i; k<size; k++) //inserts data after index, shifting it up by one
                 temp[k+1] = data[k];
             //at this point all data is correct and a "blank" is left for our new element
             temp[i] = e; //inserts the new element at correct location
