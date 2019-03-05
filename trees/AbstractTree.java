@@ -28,12 +28,12 @@ public abstract class AbstractTree<E> implements Tree<E> {
         return height;
     }
 
-    /** Returns the height of a given node
+    /** Returns the height of the subtree rooted at Position p
      * @return height
      */
     private int height(Position<E> p)
     {
-        int h=0;
+        int h=0; //base case if p is a leaf/has no children
         for(Position<E> c: children(p))
             h = Math.max(h, 1+ height(c)); //recursive call
         return h;
