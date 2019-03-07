@@ -4,8 +4,8 @@ import list.List;
 public class ExperimentalAnalysis {
     public static void main(String[] args)
     {
-        List<Integer> newList = new list.ArrayList<>(1);
-        List<Integer> oldList = new ArrayList<>(1);
+        List<Integer> oldList = new list.ArrayList<>(1);
+        List<Integer> newList = new ArrayList<>(1);
         long startNew = System.currentTimeMillis();
         for(int i=0; i<21000000; i++)
         {
