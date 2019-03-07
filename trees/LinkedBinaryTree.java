@@ -3,7 +3,6 @@ package trees;
 import java.util.Iterator;
 
 public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
-    //<b>In progress, please come back later!!</b>
 
     //nested Node class
     protected static class Node<E> implements Position<E>
@@ -30,11 +29,6 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
         public void setParent(Node<E> parent) { this.parent = parent; }
         public void setLeft(Node<E> left) { this.left = left; }
         public void setRight(Node<E> right) { this.right = right; }
-    }
-
-    protected Node<E> createNode(E e, Node<E> parent, Node<E> left, Node<E> right)
-    {
-        return new Node<E>(e, parent, left, right);
     }
 
     protected Node<E> root = null;
@@ -77,19 +71,41 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
     {
         //cannot add a root to a tree that already has one
         if(!isEmpty()) throw new IllegalStateException("Tree is not empty");
-        root = createNode(e, null, null, null);
+        root = new Node<>(e, null, null, null);
         size = 1;
         return root;
     }
 
-    public Position<E> addLeft(E e) throws IllegalArgumentException
+    /** Creates a new left child of Position p
+     * @param p the parent position
+     * @param e element to be stored
+     * @return the new child
+     * @throws IllegalArgumentException if specified child already exists
+     */
+    public Position<E> addLeft(Position<E> p, E e) throws IllegalArgumentException
     {
-        return null;
+        Node<E> parent = validate(p);
+        if(parent.getLeft()!=null) throw new IllegalArgumentException("p already has a left child");
+        Node<E> child = new Node<>(e, parent, null, null);
+        parent.setLeft(child);
+        size++;
+        return child;
     }
 
-    public Position<E> addRight(E e) throws IllegalArgumentException
+    /** Creates a new right child of Position p
+     * @param p the parent position
+     * @param e element to be stored
+     * @return the new child
+     * @throws IllegalArgumentException if specified child already exists
+     */
+    public Position<E> addRight(Position<E> p, E e) throws IllegalArgumentException
     {
-        return null;
+        Node<E> parent = validate(p);
+        if(parent.getRight()!=null) throw new IllegalArgumentException("p already has a right child");
+        Node<E> child = new Node<>(e, parent, null, null);
+        parent.setRight(child);
+        size++;
+        return child;
     }
 
     /** Replaces element at position p, and returns replaced element */
@@ -101,6 +117,52 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
         return temp;
     }
 
+    /** attaches trees t1 and t2 as left and right subtrees of an external node p **/
+    public void attach(Position<E> p, LinkedBinaryTree<E> t1, LinkedBinaryTree<E> t2)
+            throws IllegalArgumentException
+    {
+        Node<E>  node = validate(p);
+        if(isInternal(node)) throw new IllegalArgumentException("p must be a leaf");
+        size += t1.size() + t2.size();
+        if(!t1.isEmpty())
+        {
+            t1.root.setParent(node);
+        }
+        if(!t2.isEmpty())
+        {
+            t2.root.setParent(node);
+        }
+    }
+
+    /** Removes the node at position p and replaces it with its child if it has one.
+     * Note that we cannot remove nodes with two children in a binary tree.
+     * @return the element held by the removed node
+     */
+    public E remove(Position<E> p) throws IllegalArgumentException
+    {
+        Node<E> node = validate(p);
+        if(numChildren(node)==2) throw new IllegalArgumentException("p has two children");
+        //we will go over the syntax below in class if you are unfamiliar with it
+        Node<E> child = (node.getLeft() != null ? node.getLeft() : node.getRight());
+        //note that if leaf has no children, child is set to null in the line above.
+        Node<E> parent = node.getParent();
+        if(child!=null)
+            child.setParent(parent); //childs parent becomes grandparent
+        if(node==root) root=child; //if removed node was root, child inherits the throne
+        else {
+            if(node ==parent.getLeft()) parent.setLeft(child);
+            else parent.setRight(child);
+        }
+        size--;
+        E temp = node.getElement();
+        node.setElement(null); //for garbage collection
+        node.setLeft(null);
+        node.setRight(null);
+        //the textbook convention is to set a deleted nodes parent to itself,
+        // in order to later check if the node was deleted
+        node.setParent(node);
+        return temp;
+    }
 
     //end of updates methods for this class
 
