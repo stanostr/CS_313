@@ -12,7 +12,7 @@ public class Library implements Cloneable {
 
     //what kind of copy is this? Note: we already know that Book's clone() returns a shallow copy
     @Override
-    protected Library clone() {
+    public Library clone() {
         try {
             Library other = (Library) super.clone();
             other.books = new Book[this.books.length];

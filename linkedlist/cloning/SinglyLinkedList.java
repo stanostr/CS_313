@@ -84,28 +84,28 @@ public class SinglyLinkedList<E> implements Cloneable {
     @Override
     public boolean equals(Object o)
     {
-	if(o==null) return false; //because our list is clearly not null, even if empty
+		if(o==null) return false; //because our list is clearly not null, even if empty
 
-	/*
-	* this may be justifiably confusing to students but getClass() returns an object of Class type,
-	* and Class objects may be compared with == and != as if they are primitives or Strings
-	* but NOT like other reference types.
-	* Read more at https://docs.oracle.com/javase/7/docs/api/java/lang/Class.html
-	* You do not need to understand the details of how this works.
-	*/
-	if(getClass() != o.getClass()) return false;
+		/*
+		* this may be justifiably confusing to students but getClass() returns an object of Class type,
+		* and Class objects may be compared with == and != as if they are primitives or Strings
+		* but NOT like other reference types.
+		* Read more at https://docs.oracle.com/javase/7/docs/api/java/lang/Class.html
+		* You do not need to understand the details of how this works.
+		*/
+		if(getClass() != o.getClass()) return false;
 
-	SinglyLinkedList other = (SinglyLinkedList) o;
-	if(size != other.size) return false;
-	Node walkA = head;
-	Node walkB = other.head;
-	while(walkA != null)
-	{
-		if(!walkA.getElement().equals(walkB.getElement())) return false;
-		walkA = walkA.getNext();
-		walkB = walkB.getNext();
-	}
-	return true;
+		SinglyLinkedList other = (SinglyLinkedList) o;
+		if(size != other.size) return false;
+		Node walkA = head;
+		Node walkB = other.head;
+		while(walkA != null)
+		{
+			if(!walkA.getElement().equals(walkB.getElement())) return false;
+			walkA = walkA.getNext();
+			walkB = walkB.getNext();
+		}
+		return true;
     }
 
 	//Why shouldn't we do it as below instead? Note: it will actually work correctly

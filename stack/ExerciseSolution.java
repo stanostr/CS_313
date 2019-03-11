@@ -20,11 +20,16 @@ public class ExerciseSolution {
         S.push(2);
         S.push(1);
 
+        reverseStack(S);
+        System.out.println(S.top());
+    }
+
+    static void reverseStack(Stack s) {
         Stack<Integer> temp1 = new LinkedStack<>();
         Stack<Integer> temp2 = new LinkedStack<>();
-        transfer(S, temp1);
+        transfer(s, temp1);
         transfer(temp1, temp2);
-        transfer(temp2, S);
+        transfer(temp2, s);
 
         //why do we need the temporary stacks?
     }

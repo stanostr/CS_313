@@ -26,7 +26,6 @@ public class SingleSentinelLinkedList<E> {
     private Node<E> sentinel;
     private int size = 0;
 
-    //default constructor, constructs empty list
     public SingleSentinelLinkedList() {
         sentinel = new Node<>(null, null, null);
         sentinel.setNext(sentinel);
@@ -50,9 +49,6 @@ public class SingleSentinelLinkedList<E> {
         return sentinel.getPrev().getElement();
     }
 
-    /**
-     * No changes
-     */
     private void addBetween(E e, Node<E> predecessor, Node<E> successor)
     {
         Node<E> newest = new Node<>(e, predecessor, successor);
@@ -71,9 +67,6 @@ public class SingleSentinelLinkedList<E> {
         addBetween(e, sentinel.getPrev(), sentinel);
     }
 
-    /**
-     * No changes
-     */
     private E remove(Node <E> node)
     {
         Node<E> predecessor = node.getPrev();
