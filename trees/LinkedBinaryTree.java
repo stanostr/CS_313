@@ -54,7 +54,7 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
     @Override
     public Position<E> right(Position<E> p) throws IllegalArgumentException {
         Node<E> node = validate(p);
-        return node.getLeft();
+        return node.getRight();
     }
 
     @Override
