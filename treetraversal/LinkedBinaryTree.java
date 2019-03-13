@@ -125,10 +125,16 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
         if(!t1.isEmpty())
         {
             t1.root.setParent(node);
+            node.setLeft(t1.root);
+            t1.root = null;
+            t1.size = 0;
         }
         if(!t2.isEmpty())
         {
             t2.root.setParent(node);
+            node.setRight(t2.root);
+            t2.root = null;
+            t2.size = 0;
         }
     }
 

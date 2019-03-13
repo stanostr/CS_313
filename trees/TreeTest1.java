@@ -8,7 +8,7 @@ public class TreeTest1 {
         binaryTree.addRoot("*");
         Position<String> root = binaryTree.root();
         binaryTree.addLeft(root, "-");
-        binaryTree.addRight(root, "+");
+        binaryTree.addRight(root, "-");
         Position<String> rootLeft = binaryTree.left(root);
         binaryTree.addLeft(rootLeft, "7");
         binaryTree.addRight(rootLeft, "4");
