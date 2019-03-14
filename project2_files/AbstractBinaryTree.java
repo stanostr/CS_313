@@ -9,13 +9,13 @@ public  abstract class AbstractBinaryTree<E> extends AbstractTree<E>
     public Position<E> sibling(Position<E> p)
     {
         Position<E> parent = parent(p);
-        if(parent==null) return null; //p is root and has no parent or siblings
-        if(p == left(parent)) return right(parent); //if p is left, return right*
-        else return left(parent); //p must be right, so return left
+        if(parent==null) return null;
+        if(p == left(parent)) return right(parent);
+        else return left(parent);
     }
 
     /** returns the number of children of Position p */
-    public int numChildren(Position<E> p) //note that numChildren is introduced in Tree interface
+    public int numChildren(Position<E> p)
     {
         int count = 0;
         if(left(p)!=null) count++;
@@ -23,16 +23,36 @@ public  abstract class AbstractBinaryTree<E> extends AbstractTree<E>
         return count;
     }
 
-    /** returns an iterable collection of the Positions that are p's children
-     * Note that this is a <b>snapshot</b> iterator!
-     */
+    /** returns an iterable collection of the Positions that are p's children */
     public Iterable<Position<E>> children(Position<E> p)
     {
-        //here we use a java.util.ArrayList, but we could just as well use our own implementation
         List<Position<E>> snapshot = new ArrayList<>(2);
         if(left(p)!=null) snapshot.add(left(p));
         if(right(p)!=null) snapshot.add(right(p));
         return snapshot;
     }
 
+    private void inorderSubtree(Position<E> p, List<Position<E>> snapshot)
+    {
+        if(left(p)!=null)
+            inorderSubtree(left(p), snapshot);
+        snapshot.add(p);
+        if(right(p)!=null)
+            inorderSubtree(right(p), snapshot);
+    }
+
+    public Iterable<Position<E>> inorder()
+    {
+        List<Position<E>> snapshot = new ArrayList<>();
+        if(!isEmpty())
+        {
+            inorderSubtree(root(), snapshot);
+        }
+        return snapshot;
+    }
+
+    @Override
+    public Iterable<Position<E>> positions() {
+        return inorder();
+    }
 }

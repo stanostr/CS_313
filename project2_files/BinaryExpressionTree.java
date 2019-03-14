@@ -3,6 +3,7 @@ package project2_files;
 public class BinaryExpressionTree {
     private static final String DIGITS = "0123456789";
     private static final String OPERATORS = "+-/*";
+    private BinaryExpressionTree() {} //to prevent initialization
 
     /**
      * Transforms a fully parenthesized infix expression into a postfix expression.
@@ -86,5 +87,30 @@ public class BinaryExpressionTree {
     {
         String postfix = postfixFromInfix(infix);
         return constructExpressionTreeFromPostfix(postfix);
+    }
+
+    /**
+     * Evaluates and returns the value associated with a binary expressiont tree.
+     * @param tree a binary expression tree
+     * @return the value associated with the root
+     */
+    public static int valueOfExpressionTree(LinkedBinaryTree<String> tree)
+    {
+        //TODO for students
+        return 0;
+    }
+
+    /**
+     * Returns a fully parenthesized infix expression
+     * represented by the binary expression tree.
+     * The binary expression tree is expected to contain only
+     * integers (positive or negative) and the operators: +, -, /, *
+     * @param tree a binary expression tree
+     * @return infix expression represented by the tree
+     */
+    public static String infixExpressionFromTree(LinkedBinaryTree<String> tree)
+    {
+        //TODO for students
+        return "";
     }
 }

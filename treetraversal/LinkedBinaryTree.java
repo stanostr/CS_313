@@ -170,11 +170,6 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
 
     //end of updates methods for this class
 
-    @Override
-    public Iterable<Position<E>> positions() {
-
-        return null;
-    }
 
     /**
      * Validates the position and returns it as a node

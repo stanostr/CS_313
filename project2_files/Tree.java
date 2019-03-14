@@ -32,8 +32,8 @@ public interface Tree<E> extends Iterable<E> {
     boolean isEmpty();
 
     //returns an iterator for all elements in the tree (Tree is Iterable)
-    Iterator<E> iterator(); //do not worry about this yet*
+    Iterator<E> iterator();
 
     //Returns an iterable collection of all positions of the tree
-    Iterable<Position<E>> positions(); //do not worry about this yet*
+    Iterable<Position<E>> positions();
 }

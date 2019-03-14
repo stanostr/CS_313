@@ -54,4 +54,8 @@ public  abstract class AbstractBinaryTree<E> extends AbstractTree<E>
         return snapshot;
     }
 
+    @Override
+    public Iterable<Position<E>> positions() {
+        return inorder();
+    }
 }
