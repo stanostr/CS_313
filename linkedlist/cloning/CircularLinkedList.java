@@ -90,8 +90,9 @@ public class CircularLinkedList<E> implements Cloneable {
         Node walkB = other.tail.next;
 
         //we have to do this a little differently from SinglyLinkedList to avoid an infinite loop!
-        for(int i=0; i<Math.max(other.size, this.size); i++)
+        for(int i=0; i<this.size; i++)
         {
+            //we already know the lists are of the same size so this code is safe
             if(!walkA.getElement().equals(walkB.getElement())) return false;
             walkA = walkA.getNext();
             walkB = walkB.getNext();
