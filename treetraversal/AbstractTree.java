@@ -31,7 +31,6 @@ public abstract class AbstractTree<E> implements Tree<E> {
 
     /**
      * Returns the height of the subtree rooted at Position p
-     *
      * @return height
      */
     private int height(Position<E> p) {
@@ -104,7 +103,6 @@ public abstract class AbstractTree<E> implements Tree<E> {
         return snapshot;
     }
 
-
     /**
      * Returns an iterable collection of positions of the tree in breadth-first order
      */
@@ -127,5 +125,4 @@ public abstract class AbstractTree<E> implements Tree<E> {
     }
 
     //why cant we add inorder algorithm here?
-
 }

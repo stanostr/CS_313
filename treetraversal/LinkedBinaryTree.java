@@ -170,13 +170,12 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
 
     //end of updates methods for this class
 
-
     /**
      * Validates the position and returns it as a node
      * @throws IllegalArgumentException if given invalid node
      */
     private Node<E> validate(Position<E> p) throws IllegalArgumentException {
-        //note that if this test fails, it is still a Position, just note a Node
+        //note that if this misc fails, it is still a Position, just note a Node
         if(!(p instanceof Node))
             throw new IllegalArgumentException("Not a valid position type");
         Node<E> node = (Node<E>) p;
