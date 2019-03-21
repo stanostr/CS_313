@@ -34,6 +34,21 @@ public abstract class AbstractPriorityQueue<K, V> implements PriorityQueue<K, V>
 
     private Comparator<K> comp;
 
+    protected int compare(Entry<K, V> a, Entry<K, V> b)
+    {
+        return comp.compare(a.getKey(), b.getKey());
+    }
+
+    protected boolean checkKey(K key)
+    {
+        try {
+            return comp.compare(key, key) == 0; //key should be equal to itself
+        }
+        catch (ClassCastException c) {
+            throw new IllegalArgumentException("Incompatible key");
+        }
+    }
+
     @Override
     public boolean isEmpty() {
         return size() == 0;
