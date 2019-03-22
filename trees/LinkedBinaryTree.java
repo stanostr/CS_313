@@ -1,7 +1,5 @@
 package trees;
 
-import java.util.Iterator;
-
 public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
 
     //nested Node class
@@ -171,20 +169,6 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
     }
 
     //end of updates methods for this class
-
-    @Override
-    public Iterator<E> iterator() {
-        //We are not ready to implement this yet!!!
-        //we need to learn about tree traversal first
-        return null;
-    }
-
-    @Override
-    public Iterable<Position<E>> positions() {
-        //We are not ready to implement this yet!!!
-        //we need to learn about tree traversal first
-        return null;
-    }
 
     /**
      * Validates the position and returns it as a node
