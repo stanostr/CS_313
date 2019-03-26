@@ -14,6 +14,5 @@ public class PriorityQueueTest {
         System.out.println(unsortedpq.removeMin().getValue()); //line 4
         System.out.println(unsortedpq.min().getValue()); //line 5
         System.out.println(unsortedpq.min().getKey()); //line 6
-
     }
 }
