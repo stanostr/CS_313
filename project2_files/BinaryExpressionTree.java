@@ -90,7 +90,7 @@ public class BinaryExpressionTree {
     }
 
     /**
-     * Evaluates and returns the value associated with a binary expressiont tree.
+     * Evaluates and returns the value associated with a binary expression tree.
      * @param tree a binary expression tree
      * @return the value associated with the root
      */
