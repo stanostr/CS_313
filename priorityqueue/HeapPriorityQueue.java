@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-//TODO incomplete
+//this is taken directly from the book Code Fragment 9.5. Only comments have been changed.
 public class HeapPriorityQueue<K, V> extends AbstractPriorityQueue<K, V> {
     protected List<Entry<K, V>> heap = new ArrayList<>();
 
@@ -48,16 +48,26 @@ public class HeapPriorityQueue<K, V> extends AbstractPriorityQueue<K, V> {
         }
     }
 
-    //TODO
+    /** Moves the entry at index j lower, if necessary, to restore the heap property. */
     protected void downheap(int j)
     {
         while(hasLeft(j))
         {
+            //start of find smallest child
             int leftIndex = left(j);
             int smallChildIndex = leftIndex;
             if(hasRight(j)) {
-
+                int rightIndex = right(j);
+                if(compare(heap.get(smallChildIndex), heap.get(j)) >= 0)
+                    smallChildIndex = rightIndex;
             }
+            //end of find smallest child
+
+            //compares smallest child to the current entry
+            if(compare(heap.get(smallChildIndex), heap.get(j)) >= 0)
+                break; //we are done because heap-order satisfied
+            swap(j, smallChildIndex);
+            j = smallChildIndex;
         }
     }
 
