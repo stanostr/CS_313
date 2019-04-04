@@ -6,8 +6,7 @@ import priorityqueue.PriorityQueue;
 
 public class PQSort {
 
-    /**
-     * Sorts an array of type T
+    /** Sorts an array of type T
      * @param <T> element type
      */
     public static <T> void pqSort(T[] data, PriorityQueue<T, ?> priorityQueue)
@@ -26,8 +25,7 @@ public class PQSort {
     }
 
 
-    /**
-     * Sorts a DoublyLinkedList
+    /** Sorts a DoublyLinkedList
      * @param <T> element type
      */
     public static <T> void pqSort(DoublyLinkedList<T> data, PriorityQueue<T, ?> priorityQueue)
@@ -45,8 +43,7 @@ public class PQSort {
         }
     }
 
-    /**
-     * Sorts an ArrayList
+    /** Sorts a List
      * @param <T> element type
      */
     public static <T> void pqSort(List<T> data, PriorityQueue<T, ?> priorityQueue)

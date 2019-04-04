@@ -13,6 +13,28 @@ public class HeapPriorityQueue<K, V> extends AbstractPriorityQueue<K, V> {
     {
         super(comparator);
     }
+
+    /** For bottom up-heap construction */
+    public HeapPriorityQueue(K[] keys, V[] values) throws IllegalArgumentException
+    {
+        super();
+        if(keys.length!=values.length) throw new IllegalArgumentException("Number of keys and values must match");
+        for(int j=0; j<keys.length; j++)
+        {
+            heap.add(new PQEntry<>(keys[j], values[j])); //simply adds to the end of list
+        }
+        heapify(); //fixes the list to satisfy heap-order property
+    }
+
+    /** bottom up construction of heap */
+    private void heapify() {
+        int startIndex = parent(size()-1); //start at PARENT of last entry
+        for(int j=startIndex; j>=0; j--) //loop through all other non-leaf nodes
+        {
+            downheap(j);
+        }
+    }
+
     //these methods return the position of the desired element within the ArrayList
     protected int parent(int j) { return (j-1)/2; } //truncated integer division
     protected int left(int j) { return (2*j)+1; }
