@@ -183,4 +183,22 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
             throw new IllegalArgumentException("p is no longer in the tree");
         return node;
     }
+
+    //Solution to C-9.33: Returns the last position in the linked binary tree.
+    public Position<E> lastPosition()
+    {
+        Position<E> current = root;
+
+        String path = Integer.toBinaryString(size());
+        path = path.substring(1); //get rid of the first character
+
+        //follow the path
+        for(int i=0; i<path.length(); i++)
+        {
+            if(path.charAt(i)=='0') current = left(current); //go left for 0
+            else current = right(current); //go right for 1
+        }
+        return current;
+    }
+
 }
