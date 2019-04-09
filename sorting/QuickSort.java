@@ -1,6 +1,5 @@
 package sorting;
 
-import java.util.concurrent.ThreadLocalRandom;
 import queue.LinkedQueue;
 import queue.Queue;
 
@@ -32,23 +31,23 @@ public class QuickSort {
         while(!less.isEmpty())
             data.enqueue(less.dequeue());
         while(!equal.isEmpty())
-            data.enqueue(less.dequeue());
+            data.enqueue(equal.dequeue());
         while(!greater.isEmpty())
-            data.enqueue(less.dequeue());
+            data.enqueue(greater.dequeue());
     }
 
-    private static <E> void quickSortInPlace(E[] data, Comparator<E> comp, int a, int b)
+    /** sort the sub-array data[a ... b], inclusive */
+    public static <E> void quickSortInPlace(E[] data, Comparator<E> comp, int a, int b)
     {
         if(a >= b) return;
         int left = a;
         int right = b-1;
-        //selects a random pivot, conventional way since Java 7
-        E pivot = data[ThreadLocalRandom.current().nextInt(0,  data.length)];
-        E temp;
-        while(left <= right)
-        {
+        //selects last element for pivot
+        E pivot = data[b];
+        E temp; //used for swaps
+        while(left <= right) {
             while(left <= right && comp.compare(data[left], pivot) < 0) left++;
-            while(left <= right && comp.compare(data[right], pivot)< 0) right--;
+            while(left <= right && comp.compare(data[right], pivot) > 0) right--;
             if(left <= right) {
                 temp = data[left];
                 data[left] = data[right];
@@ -56,5 +55,14 @@ public class QuickSort {
                 left++; right--;
             }
         }
+
+        //put pivot in its correct place
+        temp = data[left];
+        data[left] = data[b];
+        data[b] = temp;
+
+        //recurse
+        quickSortInPlace(data, comp, a, left-1);
+        quickSortInPlace(data, comp, left+1, b);
     }
 }
