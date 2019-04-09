@@ -3,8 +3,6 @@ package sorting;
 import queue.LinkedQueue;
 import queue.Queue;
 
-import java.util.Scanner;
-
 public class MergeSortTest {
     public static void main(String[] args)
     {
