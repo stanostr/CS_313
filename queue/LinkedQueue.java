@@ -3,7 +3,7 @@ package queue;
 import linkedlist.SinglyLinkedList;
 
 public class LinkedQueue<E> implements Queue<E> {
-    private SinglyLinkedList<E> list;
+    private SinglyLinkedList<E> list = new SinglyLinkedList<>();
 
     @Override
     public int size() {
