@@ -31,7 +31,6 @@ public class Solution {
             if(op=='+') return left+right;
             if(op=='-')
             {
-                System.out.println(left + " " + right);
                 return left-right;
             }
             else throw new IllegalArgumentException("Invalid operator: " + op);
