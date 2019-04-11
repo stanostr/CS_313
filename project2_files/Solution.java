@@ -29,10 +29,7 @@ public class Solution {
             if(op=='*') return left*right;
             if(op=='/') return left/right;
             if(op=='+') return left+right;
-            if(op=='-')
-            {
-                return left-right;
-            }
+            if(op=='-') return left-right;
             else throw new IllegalArgumentException("Invalid operator: " + op);
         }
         else return Integer.valueOf(p.getElement());
