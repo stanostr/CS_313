@@ -1,5 +1,6 @@
 package sorting;
 
+import linkedlist.DoublyLinkedList;
 import queue.LinkedQueue;
 import queue.Queue;
 
@@ -9,6 +10,8 @@ public class QuickSortTest {
         testQuickSort();
         System.out.println(); //line break
         testQuickSortInPlace();
+        System.out.println(); //line break
+        testQuickSortHomework();
     }
 
     private static void testQuickSort() {
@@ -37,6 +40,24 @@ public class QuickSortTest {
         for(Integer i: array)
         {
             System.out.print(i + " ");
+        }
+    }
+
+    private static void testQuickSortHomework() {
+        DoublyLinkedList<Integer> linkedList = new DoublyLinkedList<>();
+        linkedList.addLast(12);
+        linkedList.addLast(31);
+        linkedList.addLast(11);
+        linkedList.addLast(14);
+        linkedList.addLast(18);
+        linkedList.addLast(82);
+        linkedList.addLast(21);
+        linkedList.addLast(14);
+        QuickSort.quickSort(linkedList, new DefaultComparator<>());
+        int n = linkedList.size();
+        for(int i=0; i<n; i++)
+        {
+            System.out.print(linkedList.removeFirst() + " ");
         }
     }
 

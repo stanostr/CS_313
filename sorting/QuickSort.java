@@ -1,5 +1,6 @@
 package sorting;
 
+import linkedlist.DoublyLinkedList;
 import queue.LinkedQueue;
 import queue.Queue;
 
@@ -64,5 +65,35 @@ public class QuickSort {
         //recurse
         quickSortInPlace(data, comp, a, left-1);
         quickSortInPlace(data, comp, left+1, b);
+    }
+
+    /** Solution to homework */
+    public static <K> void quickSort(DoublyLinkedList<K> data, Comparator<K> comp)
+    {
+        int n = data.size();
+        if(n<2) return; //already sorted
+        //divide
+        K pivot = data.first();
+        DoublyLinkedList<K> less = new DoublyLinkedList<>();
+        DoublyLinkedList<K> equal = new DoublyLinkedList<>();
+        DoublyLinkedList<K> greater = new DoublyLinkedList<>();
+        while(!data.isEmpty())
+        {
+            K element = data.removeLast();
+            int c = comp.compare(element, pivot);
+            if(c<0) less.addLast(element);
+            else if(c==0) equal.addLast(element);
+            else greater.addLast(element);
+        }
+        //conquer
+        quickSort(less, comp);
+        quickSort(greater, comp);
+        //combine results again
+        while(!less.isEmpty())
+            data.addLast(less.removeFirst());
+        while(!equal.isEmpty())
+            data.addLast(equal.removeFirst());
+        while(!greater.isEmpty())
+            data.addLast(greater.removeFirst());
     }
 }
