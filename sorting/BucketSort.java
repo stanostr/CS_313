@@ -62,7 +62,7 @@ public class BucketSort {
      * Bucket-sorts a Queue of Entries that have Integers as key
      * @param N range of possible Integer keys must between 0 and N-1
      */
-    public static void bucketSortEntries(Queue<Entry<Integer, ? extends Object>> queue, int N)
+    public static void bucketSortEntries(Queue<Entry<Integer, ?>> queue, int N)
     {
         int n = queue.size();
         if(n < 2)  return; //already sorted
