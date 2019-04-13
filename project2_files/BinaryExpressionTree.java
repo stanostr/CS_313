@@ -90,14 +90,30 @@ public class BinaryExpressionTree {
     }
 
     /**
-     * Evaluates and returns the value associated with a binary expression tree.
+     * Evaluates and returns the value associated with a binary expressiont tree.
      * @param tree a binary expression tree
      * @return the value associated with the root
      */
     public static int valueOfExpressionTree(LinkedBinaryTree<String> tree)
     {
-        //TODO for students
-        return 0;
+        return evaluate(tree.root(), tree);
+    }
+
+    private static int evaluate(Position<String> p, LinkedBinaryTree<String> tree)
+            throws IllegalArgumentException
+    {
+        if(tree.isInternal(p))
+        {
+            char op = p.getElement().charAt(0);
+            int left = evaluate(tree.left(p), tree);
+            int right = evaluate(tree.right(p), tree);
+            if(op=='*') return left*right;
+            if(op=='/') return left/right;
+            if(op=='+') return left+right;
+            if(op=='-') return left-right;
+            else throw new IllegalArgumentException("Invalid operator: " + op);
+        }
+        else return Integer.valueOf(p.getElement());
     }
 
     /**
@@ -110,7 +126,18 @@ public class BinaryExpressionTree {
      */
     public static String infixExpressionFromTree(LinkedBinaryTree<String> tree)
     {
-        //TODO for students
-        return "";
+        return inorder(tree, tree.root(), "");
+    }
+
+    private static String inorder(LinkedBinaryTree<String> tree, Position<String> root, String expr) {
+        if(!tree.isEmpty()) {
+            String element = root.getElement();
+            if (OPERATORS.indexOf(element.charAt(0)) != -1 && element.length() == 1)
+                expr = inorder(tree, tree.left(root), '(' + expr);
+            expr += element;
+            if (OPERATORS.indexOf(element.charAt(0)) != -1 && element.length() == 1)
+                expr = inorder(tree, tree.right(root), expr) + ')';
+        }
+        return expr;
     }
 }
