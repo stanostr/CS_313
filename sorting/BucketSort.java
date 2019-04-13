@@ -62,7 +62,7 @@ public class BucketSort {
      * Bucket-sorts a Queue of Entries that have Integers as key
      * @param N range of possible Integer keys must between 0 and N-1
      */
-    public static void bucketSortEntries(Queue<Entry<Integer, ?>> queue, int N)
+    public static void bucketSortEntries(Queue<Entry<Integer, ? extends Object>> queue, int N)
     {
         int n = queue.size();
         if(n < 2)  return; //already sorted
@@ -71,7 +71,7 @@ public class BucketSort {
         {
             Entry entry = queue.dequeue();
             int value = (Integer) entry.getKey();
-            if(B[value]==null) B[value] = new LinkedQueue<Integer>();
+            if(B[value]==null) B[value] = new LinkedQueue<Entry<Integer, ?>>();
             B[value].enqueue(entry);
         }
         for(int j=0; j<N; j++)
@@ -97,7 +97,7 @@ public class BucketSort {
         {
             Entry entry = list.removeFirst();
             int value = (Integer) entry.getKey();
-            if(B[value]==null) B[value] = new LinkedQueue<Integer>();
+            if(B[value]==null) B[value] = new LinkedQueue<Entry<Integer, ?>>();
             B[value].enqueue(entry);
         }
         for(int j=0; j<N; j++)
