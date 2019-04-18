@@ -48,8 +48,8 @@ public class ChainHashMap<K, V> extends AbstractHashMap<K, V> {
     }
 
     @Override
-    protected V bucketRemove(int i, K key) {
-        UnsortedTableMap<K, V> bucket = table[i];
+    protected V bucketRemove(int h, K key) {
+        UnsortedTableMap<K, V> bucket = table[h];
         if(bucket==null) return null;
         int oldSize = bucket.size();
         V result = bucket.remove(key);
@@ -61,7 +61,7 @@ public class ChainHashMap<K, V> extends AbstractHashMap<K, V> {
     /** Returns and iterable collection (ArrayList) of all the entries of the map. */
     @Override
     public Iterable<Entry<K, V>> entrySet() {
-        List<Entry<K, V>> buffer = new ArrayList<>();
+        List<Entry<K, V>> buffer = new ArrayList<>(size());
         for(int h=0; h<capacity; h++)
         {
             if(table[h] != null)

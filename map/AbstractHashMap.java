@@ -58,7 +58,7 @@ public abstract class AbstractHashMap<K, V> extends AbstractMap<K, V> {
 
     //abstract methods must be implemented by subclasses
     protected abstract void createTable();
-    protected abstract V bucketRemove(int i, K key);
+    protected abstract V bucketRemove(int h, K key);
     protected abstract V bucketGet(int h, K key);
     protected abstract V bucketPut(int h, K key, V value);
 }

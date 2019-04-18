@@ -16,7 +16,7 @@ public class WordCount {
 
     public static String maxWord(String filePath) throws IOException {
         Scanner in = new Scanner(new FileReader(filePath)).useDelimiter("[^a-zA-Z]+");
-        Map<String, Integer> freqMap = new UnsortedTableMap<>();
+        Map<String, Integer> freqMap = new ProbeHashMap<>(19);
         while(in.hasNext()) //fill in map
         {
             String word = in.next().toLowerCase();
