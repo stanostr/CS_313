@@ -58,7 +58,7 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
     @Override
     public Position<E> parent(Position<E> p) throws IllegalArgumentException {
         Node<E> node = validate(p);
-        return node.getLeft();
+        return node.getParent();
     }
     //end of accessor methods not implemented in AbstractBinaryTree
 

@@ -1,8 +1,8 @@
-package project2_files;
+package project3_files;
 
 public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
 
-    protected static class Node<E> implements Position<E>
+    private static class Node<E> implements Position<E>
     {
         private E element;
         private Node<E> parent;
@@ -28,7 +28,7 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
         public void setRight(Node<E> right) { this.right = right; }
     }
 
-    protected Node<E> root = null;
+    private Node<E> root = null;
     private int size = 0;
 
     //start of accessor methods not implemented in AbstractBinaryTree
