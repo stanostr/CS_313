@@ -64,7 +64,7 @@ public class ProbeHashMap<K, V> extends AbstractHashMap<K, V>  {
     {
         int j = h;
         do {
-            if(isAvailable(j)) return -1; //search failed
+            if(table[j]==null) return -1; //search failed
             if(table[j].getKey().equals(key)) return j; //found at index
             j = (j+1) % capacity;
         } while(j!=h); //return to start

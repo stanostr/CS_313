@@ -60,9 +60,8 @@ public class LinkedHeapPQ<K, V> extends AbstractPriorityQueue<K, V> {
     /** Adds a new entry to the last position in the heap and returns it. Runs in O(log n) time */
     private Position<Entry<K, V>> addNewLast(Entry<K, V> entry)
     {
-        if(heap.isEmpty()) {
+        if(heap.isEmpty())
             return heap.addRoot(entry);
-        }
         String path = Integer.toBinaryString(heap.size()+1);
         //follow the path to expecting parent
         Position<Entry<K, V>> parent = heap.root();
@@ -75,11 +74,8 @@ public class LinkedHeapPQ<K, V> extends AbstractPriorityQueue<K, V> {
             }
         }
         //if heap size was odd, we have to add as left child, else as right
-        if(heap.size()%2==1) {
+        if(heap.size()%2==1)
             return heap.addLeft(parent, entry);
-        }
-        else {
-            return heap.addRight(parent, entry);
-        }
+        else return heap.addRight(parent, entry);
     }
 }
